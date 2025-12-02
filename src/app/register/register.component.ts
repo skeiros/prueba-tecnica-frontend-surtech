@@ -1,5 +1,6 @@
 import {
   Component,
+  OnInit,
   TemplateRef,
   ViewChild,
   ViewContainerRef,
@@ -42,8 +43,9 @@ import { SummaryComponent } from "./summary/summary.component";
   templateUrl: "./register.component.html",
   styleUrl: "./register.component.css",
 })
-export class RegisterComponent {
-  registerForm: FormGroup;
+export class RegisterComponent implements OnInit {
+  fb: FormBuilder = new FormBuilder();
+  registerForm: FormGroup = this.fb.group({});
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
   countries: CountryModel[] = [];
@@ -53,11 +55,11 @@ export class RegisterComponent {
 
   constructor(
     private translate: TranslateService,
-    private fb: FormBuilder,
     private countryService: CountryService,
     private userService: UserService,
     private viewContainerRef: ViewContainerRef
-  ) {
+  ) {}
+  ngOnInit() {
     this.getContries();
     this.registerForm = this.fb.group(
       {
@@ -82,8 +84,8 @@ export class RegisterComponent {
       },
       { validators: passwordMatchValidator }
     );
+   
   }
-
   submitForm() {
     if (this.registerForm.invalid) return;
     this.currentUser = new UserModel(this.registerForm.value);
@@ -91,18 +93,17 @@ export class RegisterComponent {
     this.userService.saveUser(this.currentUser).subscribe((response: any) => {
       if (response.success) {
         this.showSuccessAlert();
-        //this.registerForm.reset();
+        this.resetRegisterForm();
       }
     });
   }
   showSuccessAlert() {
-    const html = this.viewContainerRef.createEmbeddedView(
-    this.userSummary
-  ).rootNodes[0];
+    const html = this.viewContainerRef.createEmbeddedView(this.userSummary)
+      .rootNodes[0];
     // add Component in text
     Swal.fire({
-      icon: 'success',
-      title: 'Success!',
+      icon: "success",
+      title: "Success!",
       html: html,
     });
   }
@@ -114,5 +115,11 @@ export class RegisterComponent {
         );
       }
     });
+  }
+  resetRegisterForm() {
+    this.registerForm.reset();
+    this.registerForm.markAsPristine();
+    this.registerForm.markAsUntouched();
+    this.registerForm.updateValueAndValidity();
   }
 }
