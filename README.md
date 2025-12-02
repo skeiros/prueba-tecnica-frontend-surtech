@@ -177,7 +177,7 @@ Al finalizar, tu repositorio debe incluir:
 
 ``` bash
 # 1. Clonar el repositorio
-git clone skeiros/prueba-tecnica-frontend-surtech
+git clone https://github.com/skeiros/prueba-tecnica-frontend-surtech.git
 
 # 2. Ingresar al directorio del proyecto
 cd prueba-tecnica-frontend-surtech
