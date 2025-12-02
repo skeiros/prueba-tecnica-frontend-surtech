@@ -1,14 +1,91 @@
 <div class="container">
+ 
   <mat-card class="m-4 p-4">
-    <h1 class="text-3xl font-bold underline">{{ 'TITLE' | translate }}</h1>
-    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-    <button mat-raised-button color="primary" (click)="showAlert()">Show Alert</button>
+    <mat-card-header>
+      <mat-card-title>{{ "TITLE" | translate }}</mat-card-title>
+    </mat-card-header>
+        
 
-    <mat-form-field appearance="fill" class="full">
-          <mat-label>Phone</mat-label>
-              <input matInput   mask="+00 (000) 000-0000" />
+    <form [formGroup]="registerForm">
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "FULLNAME" | translate }}</mat-label>
+        <input matInput formControlName="fullname" />
+      </mat-form-field>
 
-    </mat-form-field>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "EMAIL" | translate }}</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "PHONE_PREFIX" | translate }}</mat-label>
+        <input matInput formControlName="phone_prefix"  mask="(000)"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "PHONE_NUMBER" | translate }}</mat-label>
+        <input matInput formControlName="phone_number"  mask="000-0000"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "DATE_OF_BIRTH" | translate }}</mat-label>
+        <input matInput formControlName="date_of_birth" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "COUNTRY" | translate }}</mat-label>
+        <input matInput formControlName="country" />
+      </mat-form-field>
 
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "PASSWORD" | translate }}</mat-label>
+        <input
+          matInput
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="showPassword = !showPassword"
+          [attr.aria-label]="'Show password'"
+          [attr.aria-pressed]="showPassword"
+        >
+          <mat-icon>{{
+            showPassword ? "visibility" : "visibility_off"
+          }}</mat-icon>
+        </button>
+
+        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>{{ "CONFIRM_PASSWORD" | translate }}</mat-label>
+        <input
+          matInput
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          formControlName="confirmPassword"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="showConfirmPassword = !showConfirmPassword"
+          [attr.aria-label]="'Show confirm password'"
+          [attr.aria-pressed]="showConfirmPassword"
+        >
+          <mat-icon>{{
+            showConfirmPassword ? "visibility" : "visibility_off"
+          }}</mat-icon>
+        </button>
+
+        <mat-error *ngIf="registerForm.get('confirmPassword')?.hasError('required')">
+          Confirm Password is required
+        </mat-error>
+        <mat-error *ngIf="registerForm.hasError('passwordMismatch')">
+          Passwords do not match
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid" (click)="submitForm()">
+        {{ "REGISTER" | translate }}
+      </button>
+    </form>
   </mat-card>
 </div>
+ 
