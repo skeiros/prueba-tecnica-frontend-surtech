@@ -1,7 +1,14 @@
 <div class="container">
   <mat-card class="m-4 p-4">
-    <h1 class="text-3xl font-bold underline">register works!</h1>
+    <h1 class="text-3xl font-bold underline">{{ 'TITLE' | translate }}</h1>
     <mat-slide-toggle>Toggle me!</mat-slide-toggle>
     <button mat-raised-button color="primary" (click)="showAlert()">Show Alert</button>
+
+    <mat-form-field appearance="fill" class="full">
+          <mat-label>Phone</mat-label>
+              <input matInput   mask="+00 (000) 000-0000" />
+
+    </mat-form-field>
+
   </mat-card>
 </div>
