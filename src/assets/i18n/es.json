@@ -1,3 +1,21 @@
 {
-  "TITLE":"DESAFIO FRONTEND SURTECH"
+  "TITLE":"DESAFIO FRONTEND SURTECH",
+  "REGISTER": {
+    "FULLNAME": "Nombre Completo",
+    "EMAIL": "Correo Electrónico",
+    "PHONE_PREFIX": "Prefijo Telefónico",
+    "PHONE_NUMBER": "Número de Teléfono",
+    "DATE_OF_BIRTH": "Fecha de Nacimiento",
+    "COUNTRY": "País",
+    "PASSWORD": "Contraseña",
+    "CONFIRM_PASSWORD": "Confirmar Contraseña",
+    "SUBMIT": "Registrar"
+  },
+  "ERRORS": {
+    "REQUIRED": "Este campo es obligatorio",
+    "INVALID_EMAIL": "Por favor ingrese un correo electrónico válido",
+    "PASSWORD_MISMATCH": "Las contraseñas no coinciden",
+    "MIN_LENGTH": "La longitud mínima es de {{length}} caracteres",
+    "PHONE_PREFIX_PATTERN": "El prefijo telefónico debe tener el formato correcto"
+  }
 }

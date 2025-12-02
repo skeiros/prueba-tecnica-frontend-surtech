@@ -7,7 +7,7 @@ export class UserModel {
   phone_number: string;
   date_of_birth: string;
   password: string;
-  country: CountryModel;
+  country: string;
   constructor(data: any) {
     this.fullname = data.fullname;
     this.email = data.email;
@@ -15,7 +15,7 @@ export class UserModel {
     this.phone_number = data.phone_number;
     this.date_of_birth = data.date_of_birth;
     this.password = data.password;
-    this.country = new CountryModel(data.country);
+    this.country =data.country;
   }
 }
 
