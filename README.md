@@ -171,3 +171,63 @@ Al finalizar, tu repositorio debe incluir:
 ---
 
 *Esta prueba técnica evalúa habilidades fundamentales para el puesto. Tómate tu tiempo y demuestra lo mejor de tus capacidades.*
+
+
+# 🚀 Instrucciones para ejecutar el proyecto
+
+``` bash
+# 1. Clonar el repositorio
+git clone skeiros/prueba-tecnica-frontend-surtech
+
+# 2. Ingresar al directorio del proyecto
+cd prueba-tecnica-frontend-surtech
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Ejecutar la aplicación
+ng serve
+```
+
+Abrir en el navegador: **http://localhost:4200**
+
+> **Requisitos**\
+> - Node.js **v20.18.2**\
+> - Angular CLI compatible con **@angular/core 19.2.0**
+
+------------------------------------------------------------------------
+
+# 🧠 Decisiones técnicas relevantes
+
+-   Proyecto desarrollado con **Angular 19** usando **componentes
+    standalone**, siguiendo las mejores prácticas actuales.
+-   Implementación con **Reactive Forms**, permitiendo validadores
+    personalizados y manejo completo del estado del formulario.
+-   **TailwindCSS** para un diseño moderno, rápido de implementar y
+    totalmente responsive.
+-   **Angular Material** para componentes accesibles, consistentes y de
+    excelente experiencia de usuario.
+-   **ngx-mask** para aplicar máscaras en los inputs (ej.: teléfono).
+-   **SweetAlert2** para modales y alertas estilizadas en el envío del
+    formulario.
+-   **@ngx-translate/core** para internacionalización, permitiendo
+    manejar múltiples idiomas.
+-   Estructura del proyecto organizada en carpetas (`validators`,
+    `utils`, `models`) para asegurar orden, claridad y escalabilidad.
+
+------------------------------------------------------------------------
+
+# 📚 Librerías utilizadas
+
+-   **@ngx-translate/core**
+-   **tailwindcss**
+-   **sweetalert2**
+-   **ngx-mask**
+-   **@angular/material**
+-   Dependencias normales de Angular 19
+
+------------------------------------------------------------------------
+
+# ⏱️ Tiempo aproximado invertido
+
+**5 horas**
