@@ -219,11 +219,11 @@ Abrir en el navegador: **http://localhost:4200**
 
 # 📚 Librerías utilizadas
 
--   **@ngx-translate/core**
+-   **ngx-translate**
 -   **tailwindcss**
 -   **sweetalert2**
 -   **ngx-mask**
--   **@angular/material**
+-   **material**
 -   Dependencias normales de Angular 19
 
 ------------------------------------------------------------------------
