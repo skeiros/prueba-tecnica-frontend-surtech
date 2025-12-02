@@ -1,0 +1,42 @@
+<mat-card class="p-6" *ngIf="data">
+
+  <mat-card-title class="mb-4 text-xl font-semibold">
+    {{ "SUMMARY.TITLE" | translate }}
+  </mat-card-title>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Full Name -->
+    <div class="flex flex-col">
+      <span class="text-gray-500 text-sm">{{ "SUMMARY.FULLNAME" | translate }}</span>
+      <span class="font-medium">{{ data.fullname }}</span>
+    </div>
+
+    <!-- Email -->
+    <div class="flex flex-col">
+      <span class="text-gray-500 text-sm">{{ "SUMMARY.EMAIL" | translate }}</span>
+      <span class="font-medium">{{ data.email }}</span>
+    </div>
+
+    <!-- Phone -->
+    <div class="flex flex-col">
+      <span class="text-gray-500 text-sm">{{ "SUMMARY.PHONE_NUMBER" | translate }}</span>
+      <span class="font-medium">(+{{ data.phone_prefix }}) {{ data.phone_number }}</span>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="flex flex-col">
+      <span class="text-gray-500 text-sm">{{ "SUMMARY.DATE_OF_BIRTH" | translate }}</span>
+      <span class="font-medium">{{ data.date_of_birth | date }}</span>
+    </div>
+
+    <!-- Country -->
+    <div class="flex flex-col">
+      <span class="text-gray-500 text-sm">{{ "SUMMARY.COUNTRY" | translate }}</span>
+      <span class="font-medium">{{ data.country }}</span>
+    </div>
+
+    
+
+  </div>
+</mat-card>

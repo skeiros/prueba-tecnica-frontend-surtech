@@ -19,5 +19,14 @@
     "PHONE_PREFIX_PATTERN": "El prefijo telefónico debe tener el formato correcto",
     "PASSWORD_STRENGTH": "La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número ",
     "MIN_AGE": "Debes tener al menos 18 años"
-  }
+  },
+  "SUMMARY": {
+    "TITLE": "Resumen",
+    "FULLNAME": "Nombre Completo",
+    "EMAIL": "Correo Electrónico",  
+    "PHONE_PREFIX": "Prefijo Telefónico",
+    "PHONE_NUMBER": "Número de Teléfono",
+    "DATE_OF_BIRTH": "Fecha de Nacimiento",
+    "COUNTRY": "País"
+  } 
 }
