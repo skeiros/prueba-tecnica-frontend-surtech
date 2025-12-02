@@ -1,3 +1,22 @@
 {
-  "TITLE":"DESAFIO FRONTEND SURTECH"
+  "TITLE":"DESAFIO FRONTEND SURTECH",
+  "REGISTER": {
+    "FULLNAME": "Full Name",
+    "EMAIL": "Email",
+    "PHONE_PREFIX": "Phone Prefix",
+    "PHONE_NUMBER": "Phone Number",
+    "DATE_OF_BIRTH": "Date of Birth",
+    "COUNTRY": "Country",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "SUBMIT": "Register"
+  },
+  "ERRORS": {
+    "REQUIRED": "This field is required",
+    "INVALID_EMAIL": "Please enter a valid email address",
+    "PASSWORD_MISMATCH": "Passwords do not match",
+    "MIN_LENGTH": "Minimum length is {{length}} characters",
+    "PHONE_PREFIX_PATTERN": "Phone prefix must have the correct format",
+    "PASSWORD_STRENGTH": "Password must contain at least one uppercase letter, one lowercase letter, one number"
+  }
 }
